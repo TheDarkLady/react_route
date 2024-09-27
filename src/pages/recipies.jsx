@@ -1,8 +1,10 @@
 import React from "react";
 import UseFetch from "../hooks/UseFetch";
+import UseWindowResize from "../hooks/useWindowResize";
 
 export default function RecipiesList() {
   const { data, error, loading } = UseFetch("https://dummyjson.com/recipes");
+  const windowSize = UseWindowResize();
 
   if (loading) {
     return <h1>Fetching Recipies! Please Wait</h1>;
@@ -17,7 +19,9 @@ export default function RecipiesList() {
 
   return (
     <div>
-      <h1>Recipies List</h1>
+      <h1 style={{color:windowSize.width < 768 ? "red" : "black"}}>Recipies List</h1>
+      <h3>Window width: {windowSize.width}</h3>
+      <h3>Window height: {windowSize.height}</h3>
       <ul>
         {recipes.length > 0 ? (
           recipes.map((recipe) => (

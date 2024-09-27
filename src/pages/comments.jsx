@@ -18,8 +18,9 @@
        {
          (comments && comments.length && comments.length > 0) ? (
            comments.map((comment) => (
-             <div key={comment.id}>
+             <div key={comment.id} style={{display: "flex", gap: "10px", margin: "10px", alignItems: "center"}}>
                <label>{comment.body}</label>
+               <p>likes: {comment.likes}</p>
              </div>
            ))
          ) : (
