@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NotFound from "./pages/NotFound.jsx";
 import Layout from "./pages/Layout.jsx";
+import ReactHookForm from "./pages/ReactHookForm.jsx";
 function App() {
   const navigate = useNavigate();
   return (
@@ -67,7 +68,9 @@ function App() {
           <Route path="recepieslist/:id" element={<RecipeDetails />} />
         </Route>
         <Route path="*" element={<NotFound />} />
+        <Route path="/reacthookform" element={<ReactHookForm />} />
       </Routes>
+      
     </>
   );
 }
