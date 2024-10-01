@@ -1,16 +1,23 @@
 import React from 'react'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useState } from 'react'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { fetchListOfProducts } from '../pages/Api'
 export default function ReactQueryDemo() {
-    const query = useQuery({
+    const {data:query, isLoading} = useQuery({
         queryKey: ['productList'],
         queryFn: () => fetchListOfProducts(),
     });
-    const {mutateAsync:handleAddNewProduct} = useMutation({
-        mutationFn: addNewProduct
+    const getQueryClient= useQueryClient()
+    const {mutateAsync:handleAddNewProductMutation} = useMutation({
+        mutationFn: addNewProduct,
+        onSuccess: () => {
+            getQueryClient.invalidateQueries({queryKey: ['productList']})
+        }
     })
-    async function addNewProduct(productName) {
-        
+    async function handleAddNewProduct() {
+      await handleAddNewProductMutation(productTitle)
+      setProductTitle('')
+
     }
     const [productTitle, setProductTitle] = useState('')
     if (query.isLoading) {
