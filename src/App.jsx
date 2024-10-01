@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound.jsx";
 import Layout from "./pages/Layout.jsx";
 import ReactHookForm from "./pages/ReactHookForm.jsx";
 import Hooks from "./pages/hooks.jsx";
+import UseMemo from "./pages/UseMemo.jsx";
 function App() {
   const navigate = useNavigate();
   return (
@@ -71,6 +72,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/reacthookform" element={<ReactHookForm />} />
         <Route path="/hooks" element={<Hooks />} />
+        <Route path="/usememo" element={<UseMemo />} />
       </Routes>
       
     </>
