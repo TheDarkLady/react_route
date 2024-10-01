@@ -11,6 +11,7 @@ import ReactHookForm from "./pages/ReactHookForm.jsx";
 import Hooks from "./pages/hooks.jsx";
 import UseMemo from "./pages/UseMemo.jsx";
 import UseCallback from "./pages/useCallback.jsx";
+import ReactQueryDemo from "./pages/ReactQueryDemo.jsx";
 function App() {
   const navigate = useNavigate();
   return (
@@ -75,6 +76,7 @@ function App() {
         <Route path="/hooks" element={<Hooks />} />
         <Route path="/usememo" element={<UseMemo />} />
         <Route path="/usecallback" element={<UseCallback />} />
+        <Route path="/react-query-demo" element={<ReactQueryDemo />} />
       </Routes>
       
     </>
