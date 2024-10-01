@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import NotFound from "./pages/NotFound.jsx";
 import Layout from "./pages/Layout.jsx";
 import ReactHookForm from "./pages/ReactHookForm.jsx";
+import Hooks from "./pages/hooks.jsx";
 function App() {
   const navigate = useNavigate();
   return (
@@ -69,6 +70,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route path="/reacthookform" element={<ReactHookForm />} />
+        <Route path="/hooks" element={<Hooks />} />
       </Routes>
       
     </>
